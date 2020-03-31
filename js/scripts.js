@@ -18,17 +18,19 @@ $(document).ready(function() {
         counter++;
         numbersArray.push(counter);
       }
-      primeArray.push(numbersArray.shift())
+      primeArray.push(numbersArray.shift());
       counter = 2;
-      // while (counter < 11) {
-      //   for (let i = 1; i < numbersArray.length; i++) {
-      //     const element = array[i];
-          
-      //   }
-      // }
-      console.log(
-        `numbersArray = ${numbersArray} primeArray= ${primeArray} currentNumber ${currentNumber}`
-      );
+      while (counter < 11) {
+        for (let i = 0; i < numbersArray.length; i++) {
+          if (numbersArray[i] % counter === 0) {
+            numbersArray.splice(i, 1)
+          }
+          counter ++
+        }
+        console.log(
+          `numbersArray = ${numbersArray} primeArray= ${primeArray} currentNumber ${currentNumber}`
+        );
+      }
     }
   });
 });
