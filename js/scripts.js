@@ -2,21 +2,23 @@ $(document).ready(function() {
   //on click function
   $("form").submit(function(event) {
     event.preventDefault();
-    // let stringInput = $("#input1").val().split("");
-    // let puzzelArray = stringInput.map(function(letter) {
-    //   if (letter === "a" || letter === "A" || letter === "e" || letter === "E" || letter === "i" || letter === "I" || letter === "o" || letter === "O" || letter === "u" || letter === "U"){
-    // 		return "-";
-    //   }
-    //   return letter
-    // })
-    // console.log(puzzelArray);
     const number = $("#input1").val();
-    const numbersArray = [];
+    let numbersArray = [];
+    let primeArray = [];
     let counter = 0;
+    let currentNumber;
     while (counter < number) {
       counter++;
       numbersArray.push(counter);
+		}
+		for (let i = 0; i < numbersArray.length; i++) {
+      if (numbersArray[i] < 2) {
+        primeArray.push(numbersArray[i]);
+        numbersArray.splice(i,1)
+      } else 
+      currentNumber = numbersArray[i]
+      return
     }
-    console.log(numbersArray);
+    console.log(`numbersArray = ${numbersArray} primeArray= ${primeArray}`);	
+		});
   });
-});
